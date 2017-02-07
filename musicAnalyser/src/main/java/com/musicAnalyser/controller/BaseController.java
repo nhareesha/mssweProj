@@ -40,7 +40,6 @@ public class BaseController {
 		mv.setViewName("login");
 		mv.addObject("message_name", "actual_message");
 		
-		
 		model.addAttribute("loginUser", new LoginBean());//This is required,in order to avoid Binding errors
 		System.out.println("in login");
 		return mv;
@@ -59,6 +58,9 @@ public class BaseController {
 	public String handelLogin(@ModelAttribute("loginUser") LoginBean loginBean,
 			BindingResult result, ModelMap map) {
 		System.out.println("we are here" + loginBean.getUname());
+		
+		//Handle login code here
+		
 		return "listener";
 	}
 	
