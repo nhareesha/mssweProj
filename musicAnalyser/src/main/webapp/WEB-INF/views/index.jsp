@@ -10,6 +10,7 @@
 	integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
 	crossorigin="anonymous">
 
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet">
 
 <%--  <spring:url value="/resources/css/style.css" var="mainCss" />
     <link rel="stylesheet" href="${maincss}"/> --%>
@@ -19,29 +20,51 @@
 </head>
 <body>
 	<div class="pattern-overlay">
-		<video id="bgp" src="media/bg.mp4" autoplay="autoplay"
-			poster="bg-pic.jpg"></video>
+		<video id="bgp" src="media/bg.mp4" loop autoplay="autoplay"
+			poster="/media/bg-pic.jpg"></video>
+		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+			<ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link active" href="#">Active</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+		</nav>	
+		
 
 		<div class="container" id="body-content">
+			
 			<div class="row">
-				<div class="col-lg-12">
-					<h1>Full Width Video</h1>
-					<h3>Enjoy Adding Full Screen Videos to your Page Sections</h3>
+				<div class="col-md-12 vcenter" >
+					 <h1 id="lead-txt">Music Analyser and more</h1>
+					<h3>Any text goes here..</h3>
 				</div>
+
+				<div class="col-md-12 vcenter">
+					<button type="button" class="btn btn-success btn-lg" id="login" onclick="return login_onclick()">Login</button>
+					<button type="button" class="btn btn-primary btn-lg" id="register">Register</button>
+				</div>
+				
 			</div>
 		</div>
 
 	</div>
-
-
-
-
-
-
-
-
-
-
+	
+	<script type="text/javascript">
+		
+	function login_onclick() 
+	{
+	    window.location.href = "login";//this is like secifying path, and it goes to controller and comes back
+	}
+	
+	document.getElementById("register").onclick = function(){
+		window.location.href ="register";
+	}
+	
+	
+	</script>
 
 	<!-- jQuery first, then Tether, then Bootstrap JS. -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
