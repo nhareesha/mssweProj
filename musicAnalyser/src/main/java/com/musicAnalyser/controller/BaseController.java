@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.musicAnalyser.beans.LoginBean;
+import com.musicAnalyser.beans.RegistrationBean;
 
 /**
  * @author Hareesha Feb 4, 2017
@@ -69,10 +70,23 @@ public class BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "register", method = RequestMethod.GET)
-	public ModelAndView dislayRegister() {
+	public ModelAndView dislayRegister(Model model) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("register");
+		
+		model.addAttribute("registerUser",new RegistrationBean());//this is required for binding
 		return mv;
 	}
-
+	/**
+	 * This method handles registration
+	 * @param regBean
+	 * @return
+	 */
+	@RequestMapping(value="handleRegistration", method=RequestMethod.POST)
+	public String handleRegistration(@ModelAttribute("registerUser")RegistrationBean regBean,
+			BindingResult result, ModelMap map){
+		System.out.println("We are in handle registration method");
+		//handle registration 
+		return "listener";
+	}
 }
