@@ -1,5 +1,6 @@
 package com.musicAnalyser.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.musicAnalyser.beans.LoginBean;
 import com.musicAnalyser.beans.RegistrationBean;
+import com.musicAnalyser.dao.UserDAOImpl;
 
 /**
  * @author Hareesha Feb 4, 2017
@@ -19,7 +21,10 @@ import com.musicAnalyser.beans.RegistrationBean;
 @Controller
 @RequestMapping(value = "/")
 public class BaseController {
-
+	
+	@Autowired
+	private UserDAOImpl dao;
+	
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index() {
 
@@ -56,13 +61,22 @@ public class BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "handleLogin", method = RequestMethod.POST)
-	public String handelLogin(@ModelAttribute("loginUser") LoginBean loginBean,
+	public ModelAndView handelLogin(@ModelAttribute("loginUser") LoginBean loginBean,
 			BindingResult result, ModelMap map) {
 		System.out.println("we are here" + loginBean.getUname());
-		
+		ModelAndView mv = new ModelAndView();
 		//Handle login code here
+		boolean result1 = dao.loginUser(loginBean);
+		if(result1 == true){
+			mv.setViewName("dashboard");
+			mv.addObject("successMsg","Welcome!!");
+			return mv;
+		}
 		
-		return "listener";
+		//some work is needed here , to show error message, need some script
+		mv.setViewName("login");
+		mv.addObject("errorMag","Username/Password is incorrect");
+		return mv;
 	}
 	
 	/**
@@ -87,6 +101,7 @@ public class BaseController {
 			BindingResult result, ModelMap map){
 		System.out.println("We are in handle registration method");
 		//handle registration 
-		return "listener";
+		dao.addUser(regBean);
+		return "dashboard";
 	}
 }
