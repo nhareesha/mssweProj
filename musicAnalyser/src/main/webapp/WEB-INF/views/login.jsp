@@ -31,6 +31,13 @@
     		<div class="col-sm-3"></div>
     		
     		<div class="col-md-6 custom-box">
+    		
+	    		<div class="row">
+	    			<div class="col-sm-12">
+	    				<h2 class="text-center">Sign In</h2>
+	    				<p class="text-center text-success">Sign in with your beat port id and password</p>
+	    			</div>
+	    		</div>
     			<form:form method="POST" action="handleLogin" modelAttribute="loginUser">
 				<div class="form-group row">
 					<form:label for="uname" class="col-form-label col-sm-3" path="uname">UserName</form:label>
@@ -51,11 +58,20 @@
       				</div>
     			</div>
 				</form:form>
+				<div class="row">
+					<div class="col-sm-12">
+						<p class="text-danger text-center">${errorMag}</p>
+					</div>
+				</div>
     		</div>
     		<div class="col-sm-3"></div>
     	</div>
     </div>
-
+	
+	<script type="text/javascript">
+	
+	
+	</script>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
