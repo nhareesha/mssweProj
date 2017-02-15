@@ -97,11 +97,14 @@ public class BaseController {
 	 * @return
 	 */
 	@RequestMapping(value="handleRegistration", method=RequestMethod.POST)
-	public String handleRegistration(@ModelAttribute("registerUser")RegistrationBean regBean,
+	public ModelAndView handleRegistration(@ModelAttribute("registerUser")RegistrationBean regBean,
 			BindingResult result, ModelMap map){
 		System.out.println("We are in handle registration method");
 		//handle registration 
 		dao.addUser(regBean);
-		return "dashboard";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("dashboard");
+		mv.addObject("successMsg", "Hi Welcome!!");
+		return mv;
 	}
 }
