@@ -33,7 +33,7 @@
     		<div class="col-sm-12">
     		
 	    		<!-- container for single song -->
-	    		<div class="container-fluild">
+	    		<div class="container-fluid">
 	    			<!-- song heading -->
 	    			<div class="row">
 	    				<div class="col-sm-12">
