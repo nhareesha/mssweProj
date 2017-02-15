@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="css/style.css" />
 
 </head>
-<body>
+<body class="body-bg">
 	<div class="pattern-overlay">
 		<video id="bgp" src="media/bg.mp4" loop autoplay="autoplay"
 			poster="/media/bg-pic.jpg"></video>

@@ -15,7 +15,7 @@
     
     <link rel="stylesheet" href="css/style-2.css" />
   </head>
-  <body>
+  <body class="body-bg">
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 			<ul class="nav justify-content-end">
 				<li class="nav-item"><a class="nav-link active" href="#">Active</a>

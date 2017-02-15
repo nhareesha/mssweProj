@@ -7,7 +7,7 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
-body { 
+.body-bg { 
      background: url('backgr.jpg') no-repeat center center fixed; 
      -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -15,10 +15,14 @@ body {
      background-size: cover;
 }
 
-.custom-box{
+.custom-box-1{
 	background-color:rgb(227,242,253);
 	padding-top:20px;
 	border-radius:10px;
+}
+.custom-box-2{
+	background-color: #BDFFFC;
+	 border-left: 5px solid red;
 }
 
 #errors{
