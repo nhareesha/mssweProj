@@ -31,28 +31,118 @@
     <div class="container">
     	<div class="row">
     		<div class="col-sm-12">
-    		
+    		<h2 class="text-center">Top ten songs</h2>
+    		<hr>
 	    		<!-- container for single song -->
 	    		<div class="container-fluid">
-	    			<!-- song heading -->
+	    			<!-- 1st row Top songs -->
 	    			<div class="row">
-	    				<div class="col-sm-12">
-	    					<h2>"Track1" - click play</h2>
-	    					<hr>
+	    				<!-- 1st song -->
+	    				<div class="col-sm-1"></div>
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track1"-click play</h6>
+	    					<div class="text-center" style="position:relative;">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" onmouseover="javascript:playSprite();">
+								<button class="btn-success rounded" >Play</button>
+							</div>
 	    				</div>
+	    				<!-- 2ns song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track2"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div>
+							
+	    				</div>
+	    				<!-- 3rd song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track3"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div><div class="text-center">
+								<button class="btn-success rounded" id="music">Play</button>
+							</div>
+	    				</div>
+	    				<!-- 4th song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track4"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div>
+							<div class="text-center">
+								<button class="btn-success rounded">Play</button>
+							</div>
+	    				</div>
+	    				
+	    				<!-- 5th song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track5"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div>
+							<div class="text-center">
+								<button class="btn-success rounded">Play</button>
+							</div>
+	    				</div>
+	    				<div class="col-sm-1"></div>
 	    			</div>
-	    			<!-- song picture And Player -->
+	    			
+	    			<!-- 2nd row Top songs -->
 	    			<div class="row">
-	    				<!-- for song cover -->
-	    				<div class="col-sm-3 col-xs-12 col-xs-no-pad-r col-no-pad-l">
-	    					Song cover goes here
+	    				<!-- 1st song -->
+	    				<div class="col-sm-1"></div>
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track1"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div>
+							<div class="text-center">
+								<button class="btn-success rounded">Play</button>
+							</div>
 	    				</div>
-	    				<!-- for song player -->
-	    				<div class="col-sm-9 col-xs-12 col-no-pad-l">
-	    					player goes here
-	    					<button class="btn-success" id="music">Play</button>
+	    				<!-- 2ns song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track2"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div>
+							<div class="text-center">
+								<button class="btn-success rounded">Play</button>
+							</div>
 	    				</div>
+	    				<!-- 3rd song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track3"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div><div class="text-center">
+								<button class="btn-success rounded" id="music">Play</button>
+							</div>
+	    				</div>
+	    				<!-- 4th song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track4"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div>
+							<div class="text-center">
+								<button class="btn-success rounded">Play</button>
+							</div>
+	    				</div>
+	    				
+	    				<!-- 5th song -->
+	    				<div class="col-sm-2">
+	    					<h6 class="text-center">"Track5"-click play</h6>
+	    					<div class="text-center">
+  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude">
+							</div>
+							<div class="text-center">
+								<button class="btn-success rounded">Play</button>
+							</div>
+	    				</div>
+	    				<div class="col-sm-1"></div>
 	    			</div>
+	    		
 	    		</div>
 	    		
     		</div>
@@ -65,6 +155,11 @@
 		var audio = new Audio('music/track1.wav');
 		audio.play();
 	};
+	
+	function playSprite(){
+		console.log("hi");
+	}
+	
 	</script>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
@@ -72,3 +167,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </body>
 </html>
+
+

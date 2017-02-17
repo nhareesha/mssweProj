@@ -29,7 +29,7 @@
     <div class="container vcenter">
     <div class="row">
  		<div class="col-sm-2"></div>
- 			<div class="col-sm-8 custom-box">
+ 			<div class="col-sm-8 custom-box-1">
  			<h2 class="text-center">Sign Up</h2>
  			<p class="text-muted text-center text-success">Its free, and always be.</p>
  			<hr>

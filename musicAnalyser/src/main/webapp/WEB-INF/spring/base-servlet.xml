@@ -21,6 +21,7 @@
  	<mvc:resources mapping="/media/**" location="/resources/media/" />
  	<mvc:resources mapping="/music/**" location="/resources/media/music/" />
  	<mvc:resources mapping="/static/**" location="/resources/static" />
+ 	<mvc:resources mapping="/posters/**" location="/resources/media/posters/" />
  
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
