@@ -28,3 +28,26 @@ input:-webkit-autofill {
 #errors{
 	color:red;
 }
+.img-container{
+	position:relative;
+}
+.btn-overlay{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-1;
+}
+
+.pad-top{
+	padding-top:80px;
+}
+.pad-bottom{
+	padding-bottom:80px;
+}
+.grey-bg{
+	background-color:#DCDCDC;
+}
+
+.overflow-x{
+	overflow-x:scroll;
+}
