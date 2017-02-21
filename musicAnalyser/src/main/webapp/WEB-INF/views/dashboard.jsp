@@ -28,7 +28,7 @@
 		</nav>
 	Hi we are in dash board : ${successMsg}	
 	
-    <div class="container pad-bottom">
+    <div class="container">
     <!-- Top ten songs -->
     	<div class="row">
     		<div class="col-sm-12 col-md-12">
@@ -37,7 +37,7 @@
 	    		<!-- container for single song -->
 	    		<div class="container-fluid">
 	    			<!-- 1st row Top songs -->
-	    			<div class="row pad-bottom">
+	    			<div class="row" style="padding-bottom:70px">
 	    				<!-- 1st song -->
 	    				<div class="col-sm-1 col-md-1"></div>
 	    				<div class="col-sm-2 col-md-2">
@@ -90,7 +90,7 @@
 	    			</div>
 	    			
 	    			<!-- 2nd row Top songs -->
-	    			<div class="row">
+	    			<div class="row" style="padding-bottom:120px">
 	    				<!-- 1st song -->
 	    				<div class="col-sm-1 col-md-1"></div>
 	    				<div class="col-sm-2 col-md-2">
@@ -145,12 +145,12 @@
     	</div>
     </div>
     
-    <div class="container-fluid pad-top grey-bg">
+    <div class="container-fluid grey-bg" style="padding-top:70px">
     	<div class="row">
     		<div class="col-sm-12 col-md-12">
-    			<div class="container">
+    			<div class="container" >
 						    	<!--New songs section  -->
-						    	<div class="row	pad-bottom">
+						    	<div class="row" style="padding-bottom:30px">
 						    		<div class="col-sm-8 col-md-8">
 						    			<h2>New Songs</h2>
 						    		</div>
@@ -160,7 +160,7 @@
 						    	</div>
 						    	
 						    	<!-- row to display new songs - poster and overlay -->
-						    	<div class="row overflow-x">
+						    	<div class="row-fluid" style="overflow:auto">
 						    		<!-- overflow-x scroll -->
 							    			<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
@@ -197,7 +197,7 @@
 									    			</div>
 								    		</div>
 								    		
-								    		<div class="col-sm-2 col-md-2">
+								    		<div class="col-sm-2 col-md-2 ">
 									    			<div class="img-container">
 									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw5');" onmouseout="javascript:hideOverLay('nw5');">
@@ -205,6 +205,24 @@
 			  											<button id="nw5" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
+								    		<div class="col-sm-2 col-md-2 ">
+									    			<div class="img-container">
+									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+			  											onmouseover="javascript:showOverLay('nw6');" onmouseout="javascript:hideOverLay('nw6');">
+			  											<p class="text-center">Title</p>
+			  											<button id="nw6" class="btn-success rounded btn-overlay">Play</button>
+									    			</div>
+								    		</div>
+								    		
+								    		<div class="col-sm-2 col-md-2">
+									    			<div class="img-container">
+									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+			  											onmouseover="javascript:showOverLay('nw6');" onmouseout="javascript:hideOverLay('nw6');">
+			  											<p class="text-center">Title</p>
+			  											<button id="nw6" class="btn-success rounded btn-overlay">Play</button>
+									    			</div>
+								    		</div>
+								    		
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
 									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
@@ -218,6 +236,13 @@
 			</div>
     	</div>
     </div>
+    
+    
+    
+    <!-- ----------------------------------------------------------------------------- -->
+    
+
+    
     
 	<script type="text/javascript">
 		document.getElementById("music").onclick = function(){

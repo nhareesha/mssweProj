@@ -41,13 +41,21 @@ input:-webkit-autofill {
 .pad-top{
 	padding-top:80px;
 }
-.pad-bottom{
+.pad-bottom-80{
+	padding-bottom:80px;
+}
+
+.pad-bottom-10{
 	padding-bottom:80px;
 }
 .grey-bg{
 	background-color:#DCDCDC;
 }
 
-.overflow-x{
-	overflow-x:scroll;
+.row-fluid{
+	white-space:nowrap;
+}
+
+.row-fluid .col-sm-2{
+  display: inline-block;
 }
