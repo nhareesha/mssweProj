@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="${maincss}"/> --%>
 
 <link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="media/logo.jpg">
 
 </head>
 <body class="body-bg">
