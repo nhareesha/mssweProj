@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     
     <link rel="stylesheet" href="css/style-2.css" />
+    <link rel="icon" href="media/logo.jpg">
   </head>
   <body>
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
