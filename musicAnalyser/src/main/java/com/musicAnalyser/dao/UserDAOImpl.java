@@ -12,6 +12,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.musicAnalyser.beans.LoginBean;
+import com.musicAnalyser.beans.LoginResult;
 import com.musicAnalyser.beans.RegistrationBean;
 
 /**
@@ -47,18 +48,25 @@ public class UserDAOImpl implements UserDAO {
 	 * This methods verifies the login credentials
 	 * @return
 	 */
-	public boolean loginUser(LoginBean bean){
-		boolean result = false;
-		String sql = "SELECT psw FROM USER WHERE email="+"\""+bean.getUname()+"\"";
+        
+	public LoginResult loginUser(LoginBean bean){
+		LoginResult res = new LoginResult();
 		session = sessionFactory.openSession();
-		Query query = session.createSQLQuery(sql);
-		List<String> results = query.list();
-		if(results.size()==1){
-			if((results.get(0)).equals(bean.getPsw())){
-			result = true;
+		Query q = session.createQuery("Select u.fname,u.psw from RegistrationBean u where u.email= :email");
+		q.setParameter("email", bean.getUname());
+		
+		 List<Object[]> users =q.list();
+		 
+		 if(users.size() == 1){
+			 Object[] first = users.get(0); //this gives the first list item
+			 String uname =(String)first[0];
+			 String psw =(String)first[1]; 
+			 if(psw.equals(bean.getPsw())){
+				 res.setFname(uname);
+				 res.setResult(true);
 			}
-		}
-		return result;
+		 }
+		return res;
 	}
 	
 	public SessionFactory getSessionFactory() {
@@ -69,5 +77,4 @@ public class UserDAOImpl implements UserDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	
 }

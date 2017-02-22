@@ -38,18 +38,11 @@ input:-webkit-autofill {
 	z-index:-1;
 }
 
-.pad-top{
-	padding-top:80px;
-}
-.pad-bottom-80{
-	padding-bottom:80px;
-}
-
-.pad-bottom-10{
-	padding-bottom:80px;
+h2{
+font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 .grey-bg{
-	background-color:#DCDCDC;
+	background-color:#e4e4e4;
 }
 
 .row-fluid{

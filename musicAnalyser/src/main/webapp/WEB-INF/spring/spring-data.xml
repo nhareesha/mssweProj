@@ -48,5 +48,9 @@
 		<bean id="userDAO" class="com.musicAnalyser.dao.UserDAOImpl">
 			<property name="sessionFactory" ref="sessionFactory"/>
 		</bean>
-	
+		
+		<bean id="loginResult" class="com.musicAnalyser.beans.LoginResult">
+			<property name="fname" value="null"></property>
+			<property name="result" value="false"></property>
+		</bean>
 </beans>

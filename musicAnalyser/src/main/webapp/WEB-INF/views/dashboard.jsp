@@ -26,22 +26,29 @@
 				</li>
 			</ul>
 		</nav>
-	Hi we are in dash board : ${successMsg}	
 	
-    <div class="container">
+    <div class="container-fluid">
+    <!-- Welcomemessage -->
+    <div class="row">
+    	<div class="col-sm-12 col-md-12" style="padding-top:30px;padding-bottom:30px;">
+    		<p class="text-center"> Hi ${successMsg}.Welcome to Music Analyser ! </p>
+    	</div>
+    </div>
     <!-- Top ten songs -->
     	<div class="row">
     		<div class="col-sm-12 col-md-12">
-    		<h2 class="text-center">Top ten songs</h2>
-    		<hr>
+    		<h2 class="text-center">Top Ten Songs</h2>
+    	
 	    		<!-- container for single song -->
-	    		<div class="container-fluid">
+	    		<div class="container">
+	    			<hr>
 	    			<!-- 1st row Top songs -->
 	    			<div class="row" style="padding-bottom:70px">
+	    			
 	    				<!-- 1st song -->
 	    				<div class="col-sm-1 col-md-1"></div>
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track1"-click play</h6>
+	    					<h6 class="text-center">"Track1"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp1');" onmouseout="javascript:hideOverLay('tp1');">
@@ -50,7 +57,7 @@
 	    				</div>
 	    				<!-- 2ns song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track2"-click play</h6>
+	    					<h6 class="text-center">"Track2"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp2');" onmouseout="javascript:hideOverLay('tp2');">
@@ -60,7 +67,7 @@
 	    				</div>
 	    				<!-- 3rd song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track3"-click play</h6>
+	    					<h6 class="text-center">"Track3"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp3');" onmouseout="javascript:hideOverLay('tp3');">
@@ -69,7 +76,7 @@
 	    				</div>
 	    				<!-- 4th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track4"-click play</h6>
+	    					<h6 class="text-center">"Track4"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp4');" onmouseout="javascript:hideOverLay('tp4');">
@@ -79,7 +86,7 @@
 	    				
 	    				<!-- 5th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track5"-click play</h6>
+	    					<h6 class="text-center">"Track5"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp5');" onmouseout="javascript:hideOverLay('tp5');">
@@ -94,7 +101,7 @@
 	    				<!-- 1st song -->
 	    				<div class="col-sm-1 col-md-1"></div>
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track1"-click play</h6>
+	    					<h6 class="text-center">"Track1"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp6');" onmouseout="javascript:hideOverLay('tp6');">
@@ -103,7 +110,7 @@
 	    				</div>
 	    				<!-- 2ns song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track2"-click play</h6>
+	    					<h6 class="text-center">"Track2"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp7');" onmouseout="javascript:hideOverLay('tp7');">
@@ -112,7 +119,7 @@
 	    				</div>
 	    				<!-- 3rd song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track3"-click play</h6>
+	    					<h6 class="text-center">"Track3"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp8');" onmouseout="javascript:hideOverLay('tp8');">
@@ -121,7 +128,7 @@
 	    				</div>
 	    				<!-- 4th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track4"-click play</h6>
+	    					<h6 class="text-center">"Track4"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp9');" onmouseout="javascript:hideOverLay('tp9');">
@@ -131,7 +138,7 @@
 	    				
 	    				<!-- 5th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track5"-click play</h6>
+	    					<h6 class="text-center">"Track5"</h6>
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp10');" onmouseout="javascript:hideOverLay('tp10');">
@@ -150,15 +157,15 @@
     		<div class="col-sm-12 col-md-12">
     			<div class="container" >
 						    	<!--New songs section  -->
-						    	<div class="row" style="padding-bottom:30px">
+						    	<div class="row" >
 						    		<div class="col-sm-8 col-md-8">
 						    			<h2>New Songs</h2>
 						    		</div>
 						    		<div class="col-sm-4 col-md-4">
 						    			<h2 class="text-right">All Songs &rsaquo;</h2>
-						    		</div>
+						    		</div>	
 						    	</div>
-						    	
+						    	<hr style="padding-bottom:20px">
 						    	<!-- row to display new songs - poster and overlay -->
 						    	<div class="row-fluid" style="overflow:auto">
 						    		<!-- overflow-x scroll -->
@@ -217,18 +224,18 @@
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
 									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
-			  											onmouseover="javascript:showOverLay('nw6');" onmouseout="javascript:hideOverLay('nw6');">
+			  											onmouseover="javascript:showOverLay('nw7');" onmouseout="javascript:hideOverLay('nw7');">
 			  											<p class="text-center">Title</p>
-			  											<button id="nw6" class="btn-success rounded btn-overlay">Play</button>
+			  											<button id="nw7" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
 									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
-			  											onmouseover="javascript:showOverLay('nw6');" onmouseout="javascript:hideOverLay('nw6');">
+			  											onmouseover="javascript:showOverLay('nw8');" onmouseout="javascript:hideOverLay('nw8');">
 			  											<p class="text-center">Title</p>
-			  											<button id="nw6" class="btn-success rounded btn-overlay">Play</button>
+			  											<button id="nw8" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 						    		</div>

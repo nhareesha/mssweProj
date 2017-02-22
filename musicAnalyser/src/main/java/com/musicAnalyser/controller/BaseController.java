@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.musicAnalyser.beans.LoginBean;
+import com.musicAnalyser.beans.LoginResult;
 import com.musicAnalyser.beans.RegistrationBean;
 import com.musicAnalyser.dao.UserDAOImpl;
 
@@ -66,10 +67,11 @@ public class BaseController {
 		System.out.println("we are here" + loginBean.getUname());
 		ModelAndView mv = new ModelAndView();
 		//Handle login code here
-		boolean result1 = dao.loginUser(loginBean);
-		if(result1 == true){
+		LoginResult res = dao.loginUser(loginBean);
+		if(res.isResult() == true){
+			String msg = res.getFname();
 			mv.setViewName("dashboard");
-			mv.addObject("successMsg","Welcome!!");
+			mv.addObject("successMsg",msg);
 			return mv;
 		}
 		
