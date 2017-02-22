@@ -106,7 +106,7 @@ public class BaseController {
 		dao.addUser(regBean);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("dashboard");
-		mv.addObject("successMsg", "Hi Welcome!!");
+		mv.addObject("successMsg",regBean.getFname());
 		return mv;
 	}
 }
