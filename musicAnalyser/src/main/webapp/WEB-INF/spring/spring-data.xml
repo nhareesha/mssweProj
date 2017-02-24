@@ -49,6 +49,10 @@
 			<property name="sessionFactory" ref="sessionFactory"/>
 		</bean>
 		
+		<bean id="similarSongsDAO" class="com.musicAnalyser.dao.SimilarSongDAOImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		
 		<bean id="loginResult" class="com.musicAnalyser.beans.LoginResult">
 			<property name="fname" value="null"></property>
 			<property name="result" value="false"></property>

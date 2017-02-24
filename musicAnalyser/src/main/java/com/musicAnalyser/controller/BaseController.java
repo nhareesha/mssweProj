@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.musicAnalyser.beans.LoginBean;
 import com.musicAnalyser.beans.LoginResult;
 import com.musicAnalyser.beans.RegistrationBean;
+import com.musicAnalyser.beans.SongDetails;
+import com.musicAnalyser.dao.SimilarSongDAOImpl;
 import com.musicAnalyser.dao.UserDAOImpl;
 
 /**
@@ -25,6 +27,9 @@ public class BaseController {
 	
 	@Autowired
 	private UserDAOImpl dao;
+	
+	@Autowired
+	private SimilarSongDAOImpl songdao;
 	
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index() {
@@ -72,6 +77,7 @@ public class BaseController {
 			String msg = res.getFname();
 			mv.setViewName("dashboard");
 			mv.addObject("successMsg",msg);
+			map.addAttribute("songDetails", new SongDetails());
 			return mv;
 		}
 		
@@ -109,4 +115,70 @@ public class BaseController {
 		mv.addObject("successMsg",regBean.getFname());
 		return mv;
 	}
+	
+	
+	
+ /**
+  * Handle similar songs
+  * @param songDtls
+  * @param result
+  * @param map
+  * @return
+  */
+	@RequestMapping(value = "similarSongs", method = RequestMethod.POST)
+	public String submitForm(@ModelAttribute("songDetails")SongDetails songDtls,
+			BindingResult result, ModelMap map) {
+		System.out.println(songDtls.getSongName());
+		songdao.getSimilarSongs(songDtls.getSongName());
+		return "dashboard";
+ 
+	}
+	
+	
+	
+	/*@RequestMapping(value = "similarSongs", method = RequestMethod.GET)
+	public ModelAndView showDashboard(Model model) {
+		// Add the command object to the modelview
+		ModelAndView mv = new ModelAndView("dashboard");
+		mv.addObject("songDetails", new SongDetails());
+		System.out.println("In get request similar songs");
+		return mv;
+	}*/
+	
+	
+	
+/*	@RequestMapping(value="similarSongs" , method=RequestMethod.GET)
+	public ModelAndView handleSimilarLinks(){
+		System.out.println("we are here on click of link");
+		ModelAndView mv = new ModelAndView();
+	//	System.out.println(req.getParameter("sname"));
+		mv.setViewName("dashboard");
+		return mv;
+		
+	}
+	*/
+	
+	/*@RequestMapping(value="similarSongs" , method=RequestMethod.POST)
+	public String handleSimilarLinks(@ModelAttribute("similarSongs")SongDetails song,BindingResult result, ModelMap map){
+		System.out.println(song.getSongName());
+		return null;
+	}*/
+	
+	
+	/*@RequestMapping(value = "dashboard", method = RequestMethod.GET)
+	public ModelAndView dislayDashBoard(Model model) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("dashboard");
+		
+		model.addAttribute("similarSongs",new SongDetails());//this is required for binding
+		return mv;
+	}
+	*/
+	
+	/*@RequestMapping(value="similarSongs" , method=RequestMethod.GET)
+	public String handleSimilarLinks(){
+		return null;
+	}*/
+	
+	
 }

@@ -89,8 +89,9 @@
 					</div>
 				</div>
 			</div>
-	<div class="col-sm-2"></div>
-	</div>		
+		<div class="col-sm-2"></div>
+	</div>
+	
   </div>
     
     <script type="text/javascript">
@@ -105,8 +106,6 @@
     			document.getElementById("re-email").focus();
     			err.push(listEle);
     		}
-    		
-    		
     		
     		
     		if(err.length!=0){

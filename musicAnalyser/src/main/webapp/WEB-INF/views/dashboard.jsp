@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- 
- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
- 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,7 +48,7 @@
 	    				<!-- 1st song -->
 	    				<div class="col-sm-1 col-md-1"></div>
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track1"</h6>
+	    					<h6 id="test" class="text-center">"Track1"</h6> <!--is to test similar links concept  -->
 	    					<div class="text-center img-container">
   								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp1');" onmouseout="javascript:hideOverLay('tp1');">
@@ -245,19 +244,35 @@
     	</div>
     </div>
     
-    
-    
     <!-- ----------------------------------------------------------------------------- -->
-    
-
-    
-    
+	<div class="container" style="padding-top:70px">
+		<div class="row">
+			<div class="col-sm-12">
+				<form:form method="post" action="similarSongs" modelAttribute="songDetails" name="theForm">
+					<form:hidden path="songName" id="hidden"/>
+					<button type="submit" class="btn btn-success btn-lg" id="similar" onclick="return addDetails()">click here similar songs</button> 
+					<!--  <input type="submit" value="Similar Songs" onclick="javascript:addDetails()"/>-->	
+				</form:form>
+			
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<script type="text/javascript">
-		document.getElementById("music").onclick = function(){
+		/* document.getElementById("music").onclick = function(){
 		console.log("audio function");
 		var audio = new Audio('music/track1.wav');
 		audio.play();
-	};
+	}; */
 	
 	function showOverLay(bn){
 		var btn = document.getElementById(bn);
@@ -271,6 +286,13 @@
 		btn.style.left="0";
 		btn.style.top="0";
 		btn.style.zIndex="-1";
+	}
+	
+	function addDetails(){
+		var songName = document.getElementById("test").innerHTML; // this gets the song name from the heading
+		console.log(songName);
+		document.getElementById("hidden").value = songName;
+		document.theForm.submit();
 	}
 	
 	</script>
