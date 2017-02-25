@@ -23,6 +23,17 @@ public class SongDetails {
 	@Column(name="pattern")
 	private String pattern;
 	
+	@Column(name="track",nullable=false)
+	private String track;
+	
+	
+	
+	public String getTrack() {
+		return track;
+	}
+	public void setTrack(String track) {
+		this.track = track;
+	}
 	public String getSongName() {
 		return songName;
 	}

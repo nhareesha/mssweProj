@@ -29,5 +29,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-
+	
+	<bean id="simSongs" class="com.musicAnalyser.services.SimilarSongsService"></bean>
 </beans>

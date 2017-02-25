@@ -249,21 +249,25 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<form:form method="post" action="similarSongs" modelAttribute="songDetails" name="theForm">
-					<form:hidden path="songName" id="hidden"/>
+					<form:hidden path="track" id="hidden"/>
 					<button type="submit" class="btn btn-success btn-lg" id="similar" onclick="return addDetails()">click here similar songs</button> 
 					<!--  <input type="submit" value="Similar Songs" onclick="javascript:addDetails()"/>-->	
 				</form:form>
 			
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12">
+			<p>Song List Object : ${smlrsongList}</p>
+				
+				
+				<hr>
+			<p>Current Song : ${currentSong}</p>
+					
+			<p>Message : ${listEmpty}</p>
+			</div>
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

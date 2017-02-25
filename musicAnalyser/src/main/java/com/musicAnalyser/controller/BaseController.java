@@ -1,5 +1,7 @@
 package com.musicAnalyser.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +16,8 @@ import com.musicAnalyser.beans.LoginBean;
 import com.musicAnalyser.beans.LoginResult;
 import com.musicAnalyser.beans.RegistrationBean;
 import com.musicAnalyser.beans.SongDetails;
-import com.musicAnalyser.dao.SimilarSongDAOImpl;
 import com.musicAnalyser.dao.UserDAOImpl;
+import com.musicAnalyser.services.SimilarSongsService;
 
 /**
  * @author Hareesha Feb 4, 2017
@@ -28,8 +30,10 @@ public class BaseController {
 	@Autowired
 	private UserDAOImpl dao;
 	
+	
+	
 	@Autowired
-	private SimilarSongDAOImpl songdao;
+	private SimilarSongsService simSongs;
 	
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index() {
@@ -77,7 +81,8 @@ public class BaseController {
 			String msg = res.getFname();
 			mv.setViewName("dashboard");
 			mv.addObject("successMsg",msg);
-			map.addAttribute("songDetails", new SongDetails());
+			map.addAttribute("songDetails", new SongDetails());//while loading dashboard, this is required to handle similar links page
+																//need to change this to other page before intigrating with visualizer page
 			return mv;
 		}
 		
@@ -126,11 +131,32 @@ public class BaseController {
   * @return
   */
 	@RequestMapping(value = "similarSongs", method = RequestMethod.POST)
-	public String submitForm(@ModelAttribute("songDetails")SongDetails songDtls,
+	public ModelAndView submitForm(@ModelAttribute("songDetails")SongDetails songDtls,
 			BindingResult result, ModelMap map) {
-		System.out.println(songDtls.getSongName());
-		songdao.getSimilarSongs(songDtls.getSongName());
-		return "dashboard";
+		System.out.println(songDtls.getTrack());
+		
+		//need code to return the list of similar songs 
+		
+		//call to service class for current song details
+		SongDetails currentSong = simSongs.getCurrentSongDtls(songDtls.getTrack());
+		
+		//call to service class to get similar songs
+		List<SongDetails> similarlist= simSongs.getSimilarSongsList(songDtls.getTrack());
+		
+		ModelAndView mv = new ModelAndView("dashboard");//after intigration need to change the view name
+		
+		//Add current playing song to ModelView
+		mv.addObject("currentSong", currentSong);
+		
+		if(similarlist!=null && similarlist.size()>0){
+			
+			//ModelAndView puts the object in the request scope , which can be retrieved by using 
+			//request.getAttribute() in the jsp
+			mv.addObject("smlrsongList", similarlist);
+		}else{
+			mv.addObject("listEmpty","No matching Song found in the database");
+		}
+		return mv;
  
 	}
 	

@@ -51,6 +51,7 @@ public class UserDAOImpl implements UserDAO {
         
 	public LoginResult loginUser(LoginBean bean){
 		LoginResult res = new LoginResult();
+		try {
 		session = sessionFactory.openSession();
 		Query q = session.createQuery("Select u.fname,u.psw from RegistrationBean u where u.email= :email");
 		q.setParameter("email", bean.getUname());
@@ -66,6 +67,12 @@ public class UserDAOImpl implements UserDAO {
 				 res.setResult(true);
 			}
 		 }
+		}catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
 		return res;
 	}
 	

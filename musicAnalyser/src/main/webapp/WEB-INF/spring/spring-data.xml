@@ -32,6 +32,7 @@
 			<property name="annotatedClasses">
 				<list>
 					<value>com.musicAnalyser.beans.RegistrationBean</value>
+					<value>com.musicAnalyser.beans.SongDetails</value>
 				</list>
 			</property>
 			
