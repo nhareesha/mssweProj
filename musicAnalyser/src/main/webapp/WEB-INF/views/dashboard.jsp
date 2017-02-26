@@ -246,6 +246,7 @@
     
     <!-- ----------------------------------------------------------------------------- -->
 	<div class="container" style="padding-top:70px">
+	<!-- SimilarSongButton -->
 		<div class="row">
 			<div class="col-sm-12">
 				<form:form method="post" action="similarSongs" modelAttribute="songDetails" name="theForm">
@@ -253,20 +254,69 @@
 					<button type="submit" class="btn btn-success btn-lg" id="similar" onclick="return addDetails()">click here similar songs</button> 
 					<!--  <input type="submit" value="Similar Songs" onclick="javascript:addDetails()"/>-->	
 				</form:form>
-			
 			</div>
 		</div>
+		
 		<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<div class="container">
+					<div class="row">
+						<!-- Current song -->
+						<div class="col-sm-2 col-md-2" id="currentSong">
+							<p>Current Song : ${currentSong}</p>
+							<img src="posters/${currentSong.songName}.jpg" class="rounded img-fluid" alt="${currentSong.songName}" 
+			  											onmouseover="javascript:showOverLay('cs1');" onmouseout="javascript:hideOverLay('cs1');">
+			  				<p class="text-center"><b>${currentSong.songName}</b></p>
+						</div>
+						<div class="col-sm-4 col-md-4"></div>
+						<!-- Similar song list -->
+						<div class="col-sm-2 col-md-2" id="similarSongs">
+							<p>Song List Object : ${smlrsongList}</p>
+							<c:forEach items="${smlrsongList}" var="song">
+								<div>
+									<img src="posters/${song.songName}.jpg" class="rounded img-fluid" alt="${song.songName}" 
+			  											onmouseover="javascript:showOverLay('cs1');" onmouseout="javascript:hideOverLay('cs1');">
+									<p class="text-center"><b>${song.songName}</b></p>
+								</div>
+        					</c:forEach>
+						</div>
+						<div class="col-sm-2 col-md-2"></div>
+						<div class="col-sm-2 col-md-2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- ----------------------------------------------------------- -->
+		<%-- <div class="row">
 			<div class="col-sm-12">
 			<p>Song List Object : ${smlrsongList}</p>
-				
+				<table>
+       				 <c:forEach items="${smlrsongList}" var="song">
+           			 <tr>
+               		 	<td>${song.songName}</td>
+               		 	<td>${song.pattern}</td>
+               		 	<td>${song.track}</td>
+            		</tr>
+        			</c:forEach>
+    			</table>
 				
 				<hr>
 			<p>Current Song : ${currentSong}</p>
+			<table>
+           			 <tr>
+               		 	<td>${currentSong.songName}</td>
+               		 	<td>${currentSong.pattern}</td>
+               		 	<td>${currentSong.track}</td>
+            		</tr>
+    			</table>
 					
 			<p>Message : ${listEmpty}</p>
 			</div>
 		</div>
+		 --%>
+		
 	</div>
 	
 	
@@ -297,6 +347,13 @@
 		console.log(songName);
 		document.getElementById("hidden").value = songName;
 		document.theForm.submit();
+	}
+	
+	function onload(){
+		var data = document.getElementById("currentSong").innerHTML;
+		if(data==null){
+			document.getElementById("currentSong").style.display = "hidden";
+		}
 	}
 	
 	</script>

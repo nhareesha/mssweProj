@@ -39,6 +39,7 @@ public class SimilarSongDAOImpl implements SimilarSongDAO {
 				String songName = (String)first[1];
 				song.setPattern(pattern);
 				song.setSongName(songName);
+				song.setTrack(track);
 			}
 		}catch (Exception ex) {
 			ex.printStackTrace();
