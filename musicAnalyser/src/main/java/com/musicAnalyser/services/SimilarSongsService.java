@@ -38,9 +38,9 @@ public class SimilarSongsService {
 	
 	public SongDetails getCurrentSongDtls(String track){
 		
-		String trc = StringHelper.trimCharacter(track);
+		//String trc = StringHelper.trimCharacter(track);
 		//song details for the current song
-		SongDetails dtls = songdao.getSongDetails(trc);
+		SongDetails dtls = songdao.getSongDetails(track);
 		
 		return dtls;
 	}

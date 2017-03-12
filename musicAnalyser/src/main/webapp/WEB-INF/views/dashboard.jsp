@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,49 +49,54 @@
 	    				<!-- 1st song -->
 	    				<div class="col-sm-1 col-md-1"></div>
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 id="test" class="text-center">"Track1"</h6> <!--is to test similar links concept  -->
+	    					<h6 id="test" class="text-center">Track1</h6> <!--is to test similar links concept  -->
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=1"><img src="posters/Track1.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp1');" onmouseout="javascript:hideOverLay('tp1');">
-								<button id="tp1" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp1" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track1'/></h6>
 							</div>
 	    				</div>
 	    				<!-- 2ns song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track2"</h6>
+	    					<h6 class="text-center">Track2</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=2"><img src="posters/Track2.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp2');" onmouseout="javascript:hideOverLay('tp2');">
-								<button id="tp2" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp2" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track2'/></h6>
 							</div>
 							
 	    				</div>
 	    				<!-- 3rd song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track3"</h6>
+	    					<h6 class="text-center">Track3</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=3"><img src="posters/Track3.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp3');" onmouseout="javascript:hideOverLay('tp3');">
-								<button id="tp3" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp3" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track3'/></h6>
 							</div>
 	    				</div>
 	    				<!-- 4th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track4"</h6>
+	    					<h6 class="text-center">Track4</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=4"><img src="posters/Track4.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp4');" onmouseout="javascript:hideOverLay('tp4');">
-								<button id="tp4" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp4" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track4'/></h6>
 							</div>
 	    				</div>
 	    				
 	    				<!-- 5th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track5"</h6>
+	    					<h6 class="text-center">Track5</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=5"><img src="posters/Track5.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp5');" onmouseout="javascript:hideOverLay('tp5');">
-								<button id="tp5" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp5" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track5'/></h6>
 							</div>
 	    				</div>
 	    				<div class="col-sm-1 col-md-1"></div>
@@ -101,48 +107,53 @@
 	    				<!-- 1st song -->
 	    				<div class="col-sm-1 col-md-1"></div>
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track1"</h6>
+	    					<h6 class="text-center">Track6</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=6"><img src="posters/Track6.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp6');" onmouseout="javascript:hideOverLay('tp6');">
 								<button id="tp6" class="btn-success rounded btn-overlay">Play</button>
+								<h6><spring:message code='top.Track6'/></h6></a>
 							</div>
 	    				</div>
 	    				<!-- 2ns song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track2"</h6>
+	    					<h6 class="text-center">Track7</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=7"><img src="posters/Track7.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp7');" onmouseout="javascript:hideOverLay('tp7');">
-								<button id="tp7" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp7" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track7'/></h6>
 							</div>
 	    				</div>
 	    				<!-- 3rd song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track3"</h6>
+	    					<h6 class="text-center">Track8</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=8"><img src="posters/Track8.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp8');" onmouseout="javascript:hideOverLay('tp8');">
-								<button id="tp8" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp8" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track8'/></h6>
 							</div>
 	    				</div>
 	    				<!-- 4th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track4"</h6>
+	    					<h6 class="text-center">Track9</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  								<a href="visualiseSong?catg=Top&tp=9"><img src="posters/Track9.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp9');" onmouseout="javascript:hideOverLay('tp9');">
-								<button id="tp9" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp9" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track9'/></h6>
 							</div>
 	    				</div>
 	    				
 	    				<!-- 5th song -->
 	    				<div class="col-sm-2 col-md-2">
-	    					<h6 class="text-center">"Track5"</h6>
+	    					<h6 class="text-center">Track10</h6>
 	    					<div class="text-center img-container">
-  								<img src="posters/hey-jude.jpg" class="rounded img-fluid" alt="hey-jude" 
+  							<a href="visualiseSong?catg=Top&tp=10">	<img src="posters/Track10.jpg" class="rounded img-fluid" alt="hey-jude" 
   								onmouseover="javascript:showOverLay('tp10');" onmouseout="javascript:hideOverLay('tp10');">
-								<button id="tp10" class="btn-success rounded btn-overlay">Play</button>
+								<button id="tp10" class="btn-success rounded btn-overlay">Play</button></a>
+								<h6><spring:message code='top.Track10'/></h6>
 							</div>
 	    				</div>
 	    				<div class="col-sm-1 col-md-1"></div>
@@ -171,71 +182,89 @@
 						    		<!-- overflow-x scroll -->
 							    			<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New1.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw1');" onmouseout="javascript:hideOverLay('nw1');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track1'/></p>
 			  											<button id="nw1" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New2.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw2');" onmouseout="javascript:hideOverLay('nw2');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track2'/></p>
 			  											<button id="nw2" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New3.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw3');" onmouseout="javascript:hideOverLay('nw3');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track3'/></p>
 			  											<button id="nw3" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New4.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw4');" onmouseout="javascript:hideOverLay('nw4');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track4'/></p>
 			  											<button id="nw4" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		
 								    		<div class="col-sm-2 col-md-2 ">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New5.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw5');" onmouseout="javascript:hideOverLay('nw5');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track5'/></p>
 			  											<button id="nw5" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		<div class="col-sm-2 col-md-2 ">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New6.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw6');" onmouseout="javascript:hideOverLay('nw6');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track6'/></p>
 			  											<button id="nw6" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New7.jpg" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw7');" onmouseout="javascript:hideOverLay('nw7');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track7'/></p>
 			  											<button id="nw7" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 								    		
 								    		<div class="col-sm-2 col-md-2">
 									    			<div class="img-container">
-									    				<img src="posters/shake-it-off.jpg" class="rounded img-fluid" alt="hey-jude" 
+									    				<img src="posters/New8.png" class="rounded img-fluid" alt="hey-jude" 
 			  											onmouseover="javascript:showOverLay('nw8');" onmouseout="javascript:hideOverLay('nw8');">
-			  											<p class="text-center">Title</p>
+			  											<p class="text-center"><spring:message code='new.Track8'/></p>
 			  											<button id="nw8" class="btn-success rounded btn-overlay">Play</button>
+									    			</div>
+								    		</div>
+								    		
+								    			<div class="col-sm-2 col-md-2">
+									    			<div class="img-container">
+									    				<img src="posters/New9.jpg" class="rounded img-fluid" alt="hey-jude" 
+			  											onmouseover="javascript:showOverLay('nw9');" onmouseout="javascript:hideOverLay('nw9');">
+			  											<p class="text-center"><spring:message code='new.Track9'/></p>
+			  											<button id="nw9" class="btn-success rounded btn-overlay">Play</button>
+									    			</div>
+								    		</div>
+								    		
+								    			<div class="col-sm-2 col-md-2">
+									    			<div class="img-container">
+									    				<img src="posters/New10.jpg" class="rounded img-fluid" alt="hey-jude" 
+			  											onmouseover="javascript:showOverLay('nw10');" onmouseout="javascript:hideOverLay('nw10');">
+			  											<p class="text-center"><spring:message code='new.Track10'/></p>
+			  											<button id="nw10" class="btn-success rounded btn-overlay">Play</button>
 									    			</div>
 								    		</div>
 						    		</div>
@@ -286,36 +315,6 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		<!-- ----------------------------------------------------------- -->
-		<%-- <div class="row">
-			<div class="col-sm-12">
-			<p>Song List Object : ${smlrsongList}</p>
-				<table>
-       				 <c:forEach items="${smlrsongList}" var="song">
-           			 <tr>
-               		 	<td>${song.songName}</td>
-               		 	<td>${song.pattern}</td>
-               		 	<td>${song.track}</td>
-            		</tr>
-        			</c:forEach>
-    			</table>
-				
-				<hr>
-			<p>Current Song : ${currentSong}</p>
-			<table>
-           			 <tr>
-               		 	<td>${currentSong.songName}</td>
-               		 	<td>${currentSong.pattern}</td>
-               		 	<td>${currentSong.track}</td>
-            		</tr>
-    			</table>
-					
-			<p>Message : ${listEmpty}</p>
-			</div>
-		</div>
-		 --%>
 		
 	</div>
 	

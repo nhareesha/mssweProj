@@ -10,12 +10,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.musicAnalyser.beans.LoginBean;
 import com.musicAnalyser.beans.LoginResult;
 import com.musicAnalyser.beans.RegistrationBean;
 import com.musicAnalyser.beans.SongDetails;
+import com.musicAnalyser.beans.UtilitySong;
 import com.musicAnalyser.dao.UserDAOImpl;
 import com.musicAnalyser.services.SimilarSongsService;
 
@@ -161,50 +163,43 @@ public class BaseController {
 	}
 	
 	
-	
-	/*@RequestMapping(value = "similarSongs", method = RequestMethod.GET)
-	public ModelAndView showDashboard(Model model) {
-		// Add the command object to the modelview
-		ModelAndView mv = new ModelAndView("dashboard");
-		mv.addObject("songDetails", new SongDetails());
-		System.out.println("In get request similar songs");
-		return mv;
-	}*/
-	
-	
-	
-/*	@RequestMapping(value="similarSongs" , method=RequestMethod.GET)
-	public ModelAndView handleSimilarLinks(){
-		System.out.println("we are here on click of link");
+	/*...........................*/
+	@RequestMapping(value = "handleLoginSecurity", method = RequestMethod.POST)
+	public ModelAndView handelLoginSecurity(@ModelAttribute("loginUser") LoginBean loginBean,
+			BindingResult result, ModelMap map) {
+		System.out.println("we are here" + loginBean.getUname());
 		ModelAndView mv = new ModelAndView();
-	//	System.out.println(req.getParameter("sname"));
-		mv.setViewName("dashboard");
-		return mv;
-		
+		//Handle login code here
+		System.out.println("Handle login sec");
+			mv.setViewName("dashboard");
+			mv.addObject("successMsg",loginBean.getUname());
+			map.addAttribute("songDetails", new SongDetails());//while loading dashboard, this is required to handle similar links page
+																//need to change this to other page before intigrating with visualizer page
+			return mv;
 	}
-	*/
 	
-	/*@RequestMapping(value="similarSongs" , method=RequestMethod.POST)
-	public String handleSimilarLinks(@ModelAttribute("similarSongs")SongDetails song,BindingResult result, ModelMap map){
-		System.out.println(song.getSongName());
-		return null;
-	}*/
-	
-	
-	/*@RequestMapping(value = "dashboard", method = RequestMethod.GET)
-	public ModelAndView dislayDashBoard(Model model) {
+	/**
+	 * This method displays the Song Visualizer page
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "visualiseSong")
+	public ModelAndView dislaySong(@RequestParam("catg") String ctg, @RequestParam("tp") int num, Model model) {
+
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("dashboard");
-		
-		model.addAttribute("similarSongs",new SongDetails());//this is required for binding
+		mv.setViewName("visualiseSong");
+		UtilitySong usng = new UtilitySong();
+		usng.setCatg(ctg);
+		// System.out.println("Request param = " + ctg);
+		model.addAttribute("songsrc",usng.checkCatg(ctg) + num + ".wav");
+		model.addAttribute("chordsrc", "chords/" + usng.checkTrack(ctg) + num + ".html");
+		model.addAttribute("imgsrc", "posters/" + usng.checkID(ctg) + num + ".jpg");
+
+		model.addAttribute("catgry", ctg);
+		model.addAttribute("number", num);
+		model.addAttribute("songDetails", new SongDetails());
+
 		return mv;
 	}
-	*/
-	
-	/*@RequestMapping(value="similarSongs" , method=RequestMethod.GET)
-	public String handleSimilarLinks(){
-		return null;
-	}*/
-	
 	
 }

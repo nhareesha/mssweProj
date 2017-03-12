@@ -22,13 +22,22 @@
  	<mvc:resources mapping="/music/**" location="/resources/media/music/" />
  	<mvc:resources mapping="/static/**" location="/resources/static" />
  	<mvc:resources mapping="/posters/**" location="/resources/media/posters/" />
+ 	<mvc:resources mapping="/chords/**" location="/resources/chords/" />
+ 	<mvc:resources mapping="/Top10/**" location="/resources/media/Top10/" />
+ 	<mvc:resources mapping="/New10/**" location="/resources/media/New10/" />
  
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp" />
 	</bean>
-
+	
+	<!--  To read the app property file-->
+		<bean id="messageSource"
+			class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+			<property name="basename" value="classpath:app" />
+			<property name="defaultEncoding" value="UTF-8" />
+		</bean>
 	
 	<bean id="simSongs" class="com.musicAnalyser.services.SimilarSongsService"></bean>
 </beans>

@@ -7,7 +7,8 @@
     
     <context-param>
     	<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/spring-data.xml</param-value>
+		<param-value>
+			/WEB-INF/spring/spring-data.xml</param-value>
     </context-param>
     
     <listener>
@@ -28,6 +29,8 @@
 		<servlet-name>music</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	
 	
 
 </web-app>

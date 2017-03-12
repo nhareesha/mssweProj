@@ -2,9 +2,8 @@
  * 
  */
 package com.musicAnalyser.dao;
-
+import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -74,6 +73,34 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 		return res;
+	}
+	
+	
+	/**
+	 * This is the that retrives the user from the database
+	 * @param email
+	 * @return
+	 */
+	public RegistrationBean getUser(String email){
+		List<RegistrationBean> users = new ArrayList<RegistrationBean>();
+		RegistrationBean usr = new RegistrationBean();
+		try {
+		session = sessionFactory.openSession();
+		Query q = session.createQuery("from RegistrationBean u where u.email= :email");
+		q.setParameter("email",email);
+		users =q.list();
+		 
+		 if(users.size() > 0){
+			 usr = users.get(0);
+		 }else{
+			 usr = null;
+		 }
+		}catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return usr;
 	}
 	
 	public SessionFactory getSessionFactory() {
