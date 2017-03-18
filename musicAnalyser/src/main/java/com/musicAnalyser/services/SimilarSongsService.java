@@ -24,11 +24,11 @@ public class SimilarSongsService {
 	 * This is the service method used to get the similar songlist from the database.
 	 * @param track
 	 */
-	public List<SongDetails> getSimilarSongsList(String track){
+	public List<SongDetails> getSimilarSongsList(SongDetails dtls){
 		
 		List<SongDetails> songList=null;
 		//song details for the current song
-		SongDetails dtls =getCurrentSongDtls(track);
+	//	SongDetails dtls =getCurrentSongDtls(track);
 		if(dtls!=null){
 			//get similar songs based on the current pattern
 			songList = songdao.getSimilarSongs(dtls.getPattern(),dtls.getTrack());
@@ -41,7 +41,7 @@ public class SimilarSongsService {
 		//String trc = StringHelper.trimCharacter(track);
 		//song details for the current song
 		SongDetails dtls = songdao.getSongDetails(track);
-		
+		System.out.println("Current song details : "+dtls.getPattern()+dtls.getTrack()+dtls.getSongName());
 		return dtls;
 	}
 }

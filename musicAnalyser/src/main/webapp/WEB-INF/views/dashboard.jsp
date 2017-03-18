@@ -15,6 +15,7 @@
     
     <link rel="stylesheet" href="css/style-2.css" />
     <link rel="icon" href="media/logo.jpg">
+  
   </head>
   <body>
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -274,88 +275,8 @@
     </div>
     
     <!-- ----------------------------------------------------------------------------- -->
-	<div class="container" style="padding-top:70px">
-	<!-- SimilarSongButton -->
-		<div class="row">
-			<div class="col-sm-12">
-				<form:form method="post" action="similarSongs" modelAttribute="songDetails" name="theForm">
-					<form:hidden path="track" id="hidden"/>
-					<button type="submit" class="btn btn-success btn-lg" id="similar" onclick="return addDetails()">click here similar songs</button> 
-					<!--  <input type="submit" value="Similar Songs" onclick="javascript:addDetails()"/>-->	
-				</form:form>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-sm-12 col-md-12">
-				<div class="container">
-					<div class="row">
-						<!-- Current song -->
-						<div class="col-sm-2 col-md-2" id="currentSong">
-							<p>Current Song : ${currentSong}</p>
-							<img src="posters/${currentSong.songName}.jpg" class="rounded img-fluid" alt="${currentSong.songName}" 
-			  											onmouseover="javascript:showOverLay('cs1');" onmouseout="javascript:hideOverLay('cs1');">
-			  				<p class="text-center"><b>${currentSong.songName}</b></p>
-						</div>
-						<div class="col-sm-4 col-md-4"></div>
-						<!-- Similar song list -->
-						<div class="col-sm-2 col-md-2" id="similarSongs">
-							<p>Song List Object : ${smlrsongList}</p>
-							<c:forEach items="${smlrsongList}" var="song">
-								<div>
-									<img src="posters/${song.songName}.jpg" class="rounded img-fluid" alt="${song.songName}" 
-			  											onmouseover="javascript:showOverLay('cs1');" onmouseout="javascript:hideOverLay('cs1');">
-									<p class="text-center"><b>${song.songName}</b></p>
-								</div>
-        					</c:forEach>
-						</div>
-						<div class="col-sm-2 col-md-2"></div>
-						<div class="col-sm-2 col-md-2"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</div>
 	
-	
-	
-	<script type="text/javascript">
-		/* document.getElementById("music").onclick = function(){
-		console.log("audio function");
-		var audio = new Audio('music/track1.wav');
-		audio.play();
-	}; */
-	
-	function showOverLay(bn){
-		var btn = document.getElementById(bn);
-		btn.style.left="40%";
-		btn.style.top="40%";
-		btn.style.zIndex = "1";
-	}
-	
-	function hideOverLay(bn){
-		var btn = document.getElementById(bn);
-		btn.style.left="0";
-		btn.style.top="0";
-		btn.style.zIndex="-1";
-	}
-	
-	function addDetails(){
-		var songName = document.getElementById("test").innerHTML; // this gets the song name from the heading
-		console.log(songName);
-		document.getElementById("hidden").value = songName;
-		document.theForm.submit();
-	}
-	
-	function onload(){
-		var data = document.getElementById("currentSong").innerHTML;
-		if(data==null){
-			document.getElementById("currentSong").style.display = "hidden";
-		}
-	}
-	
-	</script>
+	<script src="js/similarSongs.js"></script>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

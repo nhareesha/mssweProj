@@ -17,8 +17,64 @@
 <link rel="icon" href="media/logo.jpg">
 <link rel="stylesheet" href="css/style-2.css" />
 <link rel="stylesheet" href="css/style_m.css" />
+<script src="js/similarSongs.js"></script>
 
+
+</head>
+<body class="body-bg">
+	<jsp:include page='navigation.jsp'><jsp:param name="nav" value="" /></jsp:include>
+	
+	<!-- Bootstrap Remade -->
+	<div class="container" style="margin-top:70px;background-color:#C6E2FF;border-radius:40px;">
+	<!-- This row is to display the image and Track name -->
+		<div class="row">
+			<!-- This col display image and track name -->
+			<div class="col-sm-12">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4 " style="margin-top:70px;">
+							<img src="${imgsrc}" alt="track playing" class="rounded img-responsive" style="margin:0 auto;width:200px;height:200px">
+						</div>
+						<div class="col-sm-4" style="padding-top:100px">
+							<h4 class="text-center">Now Playing</h4>
+							<h3 class="text-center" id="test">Track${number}</h3>
+							<h3 class="text-center">From Album &nbsp; <i><spring:message code='top.Track${number}'/></i></h3>  
+						</div>
+				
+						<!-- similar songs link -->
+						<div class="col-sm-4" style="margin-top:100px;">
+							<h4 class="text-center">Please use the below link of the similar songs</h4>
+							<a href="" onclick="addDetails()">similarSongs</a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Row 2 displays the equalizer and iframe  -->
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							<div style='margin:0 auto;' class="text-center"><canvas id="equaliser"></canvas></div>
+							<div class="text-center" id="audioframe"></div>
+							<div style="background:#C6E2FF;">
+									<iframe id="iFrame" src="${chordsrc}" style="border:none;width:600px;height:100px;"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+		
+	
+	</div>
+	
+	
 <script>
+
 	var audio = new Audio();
 	audio.src = "${songsrc}";
 	audio.controls = "true";
@@ -73,69 +129,9 @@
 
 	}
 	
+	
 </script>
 
-</head>
-<body class="body-bg">
-	<jsp:include page='navigation.jsp'><jsp:param name="nav" value="" /></jsp:include>
-	
-	<!-- Bootstrap Remade -->
-	<div class="container" style="margin-top:70px;background-color:#C6E2FF;border-radius:40px;">
-	<!-- This row is to display the image and Track name -->
-		<div class="row">
-			<div class="col-sm-1"></div>
-			<!-- This col display image and track name -->
-			<div class="col-sm-10">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-sm-3 " style="margin-top:70px;">
-							<img src="${imgsrc}" alt="track playing" class="rounded img-responsive" style="margin:0 auto;width:200px;height:200px">
-						</div>
-						<div class="col-sm-6" style="padding-top:100px">
-							<h4 class="text-center">Now Playing</h4>
-							<h3 class="text-center" id="test">Track${number}</h3>
-							<h3 class="text-center">From Album &nbsp; <i><spring:message code='top.Track${number}'/></i></h3>
-						</div>
-						<div class="col-sm-3" style="margin-top:70px;">
-							<h3>Please use the below link of the similar songs</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-1"></div>
-		</div>
-		<!-- Row 2 displays the equalizer and iframe  -->
-		<div class="row">
-			<div class="col-sm-1"></div>
-			<div class="col-sm-10">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-sm-12">
-							<div style='margin:0 auto;' class="text-center"><canvas id="equaliser"></canvas></div>
-							<div class="text-center" id="audioframe"></div>
-							<div style="background:#C6E2FF;">
-									<iframe id="iFrame" src="${chordsrc}" style="border:none;width:800px;height:100px;"></iframe>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-1"></div>
-		</div>
-		<!-- Similar songs section -->
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	<!-- jQuery first, then Tether, then Bootstrap JS. -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"

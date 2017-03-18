@@ -123,60 +123,7 @@ public class BaseController {
 		return mv;
 	}
 	
-	
-	
- /**
-  * Handle similar songs
-  * @param songDtls
-  * @param result
-  * @param map
-  * @return
-  */
-	@RequestMapping(value = "similarSongs", method = RequestMethod.POST)
-	public ModelAndView submitForm(@ModelAttribute("songDetails")SongDetails songDtls,
-			BindingResult result, ModelMap map) {
-		System.out.println(songDtls.getTrack());
-		
-		//need code to return the list of similar songs 
-		
-		//call to service class for current song details
-		SongDetails currentSong = simSongs.getCurrentSongDtls(songDtls.getTrack());
-		
-		//call to service class to get similar songs
-		List<SongDetails> similarlist= simSongs.getSimilarSongsList(songDtls.getTrack());
-		
-		ModelAndView mv = new ModelAndView("dashboard");//after intigration need to change the view name
-		
-		//Add current playing song to ModelView
-		mv.addObject("currentSong", currentSong);
-		
-		if(similarlist!=null && similarlist.size()>0){
-			
-			//ModelAndView puts the object in the request scope , which can be retrieved by using 
-			//request.getAttribute() in the jsp
-			mv.addObject("smlrsongList", similarlist);
-		}else{
-			mv.addObject("listEmpty","No matching Song found in the database");
-		}
-		return mv;
- 
-	}
-	
-	
-	/*...........................*/
-	@RequestMapping(value = "handleLoginSecurity", method = RequestMethod.POST)
-	public ModelAndView handelLoginSecurity(@ModelAttribute("loginUser") LoginBean loginBean,
-			BindingResult result, ModelMap map) {
-		System.out.println("we are here" + loginBean.getUname());
-		ModelAndView mv = new ModelAndView();
-		//Handle login code here
-		System.out.println("Handle login sec");
-			mv.setViewName("dashboard");
-			mv.addObject("successMsg",loginBean.getUname());
-			map.addAttribute("songDetails", new SongDetails());//while loading dashboard, this is required to handle similar links page
-																//need to change this to other page before intigrating with visualizer page
-			return mv;
-	}
+
 	
 	/**
 	 * This method displays the Song Visualizer page
@@ -184,7 +131,7 @@ public class BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "visualiseSong")
-	public ModelAndView dislaySong(@RequestParam("catg") String ctg, @RequestParam("tp") int num, Model model) {
+	public ModelAndView displaySong(@RequestParam("catg") String ctg, @RequestParam("tp") int num, Model model) {
 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("visualiseSong");
@@ -201,5 +148,38 @@ public class BaseController {
 
 		return mv;
 	}
+	
+	
+	/**
+	 * This method handles the similar song link
+	 * @param track
+	 * @return
+	 */
+	@RequestMapping(value = "similarSongsLink", method = RequestMethod.GET)
+	public ModelAndView similarSongs(@RequestParam("track")String track) {
+		
+		//call to service class for current song details
+		SongDetails currentSong = simSongs.getCurrentSongDtls(track);
+		
+		//call to service class to get similar songs
+		List<SongDetails> similarlist= simSongs.getSimilarSongsList(currentSong);
+		
+		ModelAndView mv = new ModelAndView("similarSongs");//after intigration need to change the view name
+		
+		//Add current playing song to ModelView
+		mv.addObject("currentSong", currentSong);
+		
+		if(similarlist!=null && similarlist.size()>0){
+			//ModelAndView puts the object in the request scope , which can be retrieved by using 
+			mv.addObject("smlrsongList", similarlist);
+			System.out.println("match found");
+		}else{
+			mv.addObject("listEmpty","No matching Song found in the database");
+			System.out.println("No match");
+		}
+		return mv;
+ 
+	}
+
 	
 }

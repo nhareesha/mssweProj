@@ -18,6 +18,7 @@
 
 	<!-- the mvc resources tag does the magic -->
  	<mvc:resources mapping="/css/**" location="/resources/css/" />
+ 	<mvc:resources mapping="/js/**" location="/resources/js/" />
  	<mvc:resources mapping="/media/**" location="/resources/media/" />
  	<mvc:resources mapping="/music/**" location="/resources/media/music/" />
  	<mvc:resources mapping="/static/**" location="/resources/static" />
