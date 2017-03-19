@@ -18,6 +18,8 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="icon" href="media/logo.jpg">
 
+<script src="js/commons.js"></script>
+
 </head>
 <body class="body-bg">
 	<div class="pattern-overlay">
@@ -45,7 +47,7 @@
 
 				<div class="col-md-12 vcenter">
 					<button type="button" class="btn btn-success btn-lg" id="login" onclick="return login_onclick()">Login</button>
-					<button type="button" class="btn btn-primary btn-lg" id="register">Register</button>
+					<button type="button" class="btn btn-primary btn-lg" id="register" onclick="reg_onclick('register')">Register</button>
 				</div>
 				
 			</div>
@@ -53,19 +55,7 @@
 
 	</div>
 	
-	<script type="text/javascript">
-		
-	function login_onclick() 
-	{
-	    window.location.href = "login";//this is like secifying path, and it goes to controller and comes back
-	}
 	
-	document.getElementById("register").onclick = function(){
-		window.location.href ="register";
-	}
-	
-	
-	</script>
 
 	<!-- jQuery first, then Tether, then Bootstrap JS. -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
