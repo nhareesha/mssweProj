@@ -66,6 +66,12 @@
       				</div>
     			</div>
 				</form:form>
+				
+				<div class="row">
+					<div class="col-sm-12">
+						<p class="text-danger text-center">${errorMag}</p>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-sm-12">
 						<p class="text-center text-success">Don't have an account yet ? <span><a href="register" >Sign Up</a></span></p>
@@ -78,11 +84,6 @@
 					</div>
 				</div>
 				
-				<div class="row">
-					<div class="col-sm-12">
-						<p class="text-danger text-center">${errorMag}</p>
-					</div>
-				</div>
     		</div>
     		<div class="col-sm-3"></div>
     	</div>
