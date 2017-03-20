@@ -9,7 +9,7 @@ function addDetails() {
 	var trackName = document.getElementById("test").innerHTML; // this gets the song name from the heading
 	console.log(trackName);
 	var path = 'similarSongsLink?track=' + trackName;
-	window.open(path, 'popup', 'width=600,height=500,left=200');
+	window.open(path, 'popup', 'width=600,height=600,left=200');
 	return false;
 }
 

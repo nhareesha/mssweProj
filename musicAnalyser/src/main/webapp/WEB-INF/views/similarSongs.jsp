@@ -23,10 +23,18 @@
 </head>
 <body class="body-bg">
 
-
+	<div class="conatiner" style='padding-top:20px'>
+	<div class="row">
+			<div class="col-sm-9 col-md-9"></div>
+			<div class="col-sm-2 col-md-2">
+				<button type="button" class="btn btn-outline-warning btn-sm text-center" onclick="closeWin();">Close</button>
+			</div>
+			<div class="col-sm-1 col-md-1"></div>
+		</div>
+	</div>
 	<!-- Bootstrap Remade -->
 	<div class="container"
-		style="margin-top: 70px; background-color: #C6E2FF; border-radius: 40px;">
+		style="margin-top: 40px; background-color: #C6E2FF; border-radius: 40px;">
 
 		<!-- Similar songs section -->
 		<div class="row">
@@ -60,18 +68,8 @@
 			</div>
 			<div class="col-sm-1 col-md-1"></div>
 		</div>
-		
-		
 	</div>
-	<div class="conatiner" style='padding-top:80px'>
-	<div class="row">
-			<div class="col-sm-4 col-md-4"></div>
-			<div class="col-sm-4 col-md-4">
-				<button type="button" class="btn btn-warning btn-lg btn-block" onclick="closeWin();">Close</button>
-			</div>
-			<div class="col-sm-4 col-md-4"></div>
-		</div>
-	</div>
+	
 	<!-- jQuery first, then Tether, then Bootstrap JS. -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
 		integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"

@@ -43,8 +43,8 @@
 				
 						<!-- similar songs link -->
 						<div class="col-sm-4" style="margin-top:100px;">
-							<h4 class="text-center">Please use the below link of the similar songs</h4>
-							<a href="" onclick="addDetails()">similarSongs</a>
+							<h4 class="text-center text-primary">Click here for similar songs</h4>
+							<a href="" onclick="addDetails()"><button type="button" class="btn btn-warning btn-lg" >Similar songs</button></a>
 						</div>
 						
 					</div>
