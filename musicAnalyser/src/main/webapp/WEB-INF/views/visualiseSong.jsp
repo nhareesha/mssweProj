@@ -38,7 +38,7 @@
 						<div class="col-sm-4" style="padding-top:100px">
 							<h4 class="text-center">Now Playing</h4>
 							<h3 class="text-center" id="test">Track${number}</h3>
-							<h3 class="text-center">From Album &nbsp; <i><spring:message code='top.Track${number}'/></i></h3>  
+							<h3 class="text-center">Album &nbsp; <i><spring:message code='top.Track${number}'/></i></h3>  
 						</div>
 				
 						<!-- similar songs link -->

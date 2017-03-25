@@ -39,19 +39,18 @@
 		</a>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="nav navbar-nav">
-				<li class="nav-item active"><a class="nav-link a1" href="#">Home
+				<li class="nav-item active"><a class="nav-link a1" href="#">Charts
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Features</a>
+				<li class="nav-item"><a class="nav-link" href="#">Blog</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
-				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Help&nbsp;Center</a></li>
 			</ul>
 			<div class="collapse navbar-collapse justify-content-end"
 				id="navbarNav">
 				<form class="form-inline">
 					<button class="btn btn-warning btn-sm" type="button" onclick="return login_onclick()" id="login">Sign In</button>
+					<label class="text-muted">or</label>&nbsp;&nbsp;&nbsp;
 					<button class="btn btn-primary btn-sm" type="button" onclick="reg_onclick('register')">Create
 						Account</button>
 				</form>
