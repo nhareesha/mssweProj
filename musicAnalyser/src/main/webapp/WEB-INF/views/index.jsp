@@ -77,16 +77,35 @@
 						More</button>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style='padding-top:40px;'>
 				<div class="col-md-2"></div>
-					<div class="col-md-3">
-						<img src="media/land1.jpg" class="rounded-circle" alt="analyse music"
+				<div class="col-md-3 text-center">
+					<div>
+							<h4 class="text-center">Chord Extraction</h4>
+							</div>
+						<img src="media/land-2.png" class="rounded-circle" alt="Chord extraction"
 							width="304" height="304">
 					</div>
-					<div class="col-md-4"></div>
+					<div class="col-md-3 text-center">
+						<div>
+							<h4>Play any Song</h4>
+							</div>
+						<img src="media/land-3.jpg" class="rounded-circle" alt="Play Song"
+							width="304" height="304">
+							
+					</div>
+					<div class="col-md-3 text-center">
+						<div>
+							<h4 class="text-center">Analyse Music</h4>
+							</div>
+						<img src="media/land1.jpg" class="rounded-circle" alt="analyze music"
+							width="304" height="304">
+					</div>
+					
+					<div class="col-md-1"></div>
 			</div>
 			<div class="row">
-				
+				<div class="col-md-12">&nbsp;</div>
 			</div>
 			
 		</div>

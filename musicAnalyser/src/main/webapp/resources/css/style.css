@@ -1,5 +1,5 @@
 html, body{
-	overflow: hidden;
+	overflow-x: hidden;
 	height: 100%;
   	margin: 0;
 }
@@ -36,7 +36,7 @@ video#bgp{
     height: 100%;
     color: white;
     display: table;
-    font-size:100px;
+  
     z-index:1;
    
 }
@@ -45,6 +45,7 @@ video#bgp{
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+    padding-top:30px;
 }
 
 #lead-txt{
